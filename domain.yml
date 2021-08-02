@@ -1,0 +1,217 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hello_world
+  - add_new_well
+  - update_existing_well
+  - add_new_rig
+  - update_existing_rig
+  - perform_rig_movement
+  - access_explore_DGR
+  - save_DGR
+  - submit_DGR
+  - add_new_user_account
+  - update_user_account
+  - change_user_password
+  - get_express_tool
+  - update_received_tool
+  - change_user_email
+  - access_explore_location
+  - add_explore_location
+  - filter_explore_location
+  - remove_filter_explore_location
+  - export_explore_location
+  - search_explore_location
+  - obtain_clearance_status
+  - obtain_LAQ_status
+  - obtain_civil_status
+  - obtain_misc_status
+  - download_reports
+  - send_email
+  - email
+  - subject
+  - message
+  - weather
+  - weather_day
+
+
+actions:
+- action_SendEmail
+- utter_slot_values
+- utter_submit
+- action_submit
+- utter_day
+- utter_weather
+- action_weather_api
+
+entities:
+  - email
+  - subject
+  - message
+  - day
+
+forms:
+  email_form:
+    email:
+    - entity: email
+      type: from_entity
+    subject:
+    - entity: subject
+      type: from_entity
+    message:
+    - entity: message
+      type: from_entity
+  day_form:
+    day:
+    - entity: day
+      type: from_entity
+
+slots:
+  email:
+    type: text
+    influence_conversation: false
+  subject:
+    type: text
+    influence_conversation: false
+  message:
+    type: text
+    influence_conversation: false
+  day:
+    type: text
+    influence_conversation: false
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_hello_world:
+  - text: "I am Hello World"
+
+  utter_add_new_well:
+  - text: "Step 1) Click on 'Add New Well' button.\nStep 2) Fill the details of well and press 'Save Well' button."
+
+  utter_update_existing_well:
+  - text: "Step 1) Click on 'Search' button, located near 'Well Name' field to search another existing well.\nStep 2) Modify Well data and save using 'Save Well' button."
+
+  utter_add_new_rig:
+  - text: "Step 1) Click on 'Add Rig' button in Rig Info form.\nStep 2) Fill the necessary details and click on 'Save' button."
+
+  utter_update_existing_rig:
+  - text: "Step 1) Click on 'Rig Name' input box in 'Rig Info' form and select the desired rig.\nStep 2) The associated data of the rig will display, modify rig data and click on 'Save Rig' button."
+
+  utter_perform_rig_movement:
+  - text: "Step 1) A new entry needs to be added into the Rig Movement History.\nStep 2) To add Rig Movement, click on 'Add Row' button, an empty row will be created in the Rig Movement History section.\nStep 3) Add the necessary information and click 'Save Rig' button."
+
+  utter_access_explore_DGR:
+  - text: "Explore DGR can be accessed using a standard web browser from Exploration Communication Portal using the following link http://10.205.8.70 "
+
+  utter_save_DGR:
+  - text: "Click on 'Save DGR' button provided near top-right side in 'Express DGR'."
+
+  utter_submit_DGR:
+  - text: "Click on 'Submit DGR' button."
+
+  utter_add_new_user_account:
+  - text: "Step 1) In the Explore DGR Home screen click on the ‘User Administration’ tab.\nStep 2) Click on the ‘Add User’ button.\nStep 3) A Modal window containing a Form for adding New User Account details will be displayed.\nStep 4) Provide required user details and click on the ‘Add User’ button.
+"
+
+  utter_update_user_account:
+  - text: "Step 1) Search an existing User Account first.\nStep 2) In the Search Form, enter either ‘Name’ or ‘CPF No.’ or ‘User Type’ and hit search. A list of matching User Account will be displayed.\nStep 3) Click on the desired User Account row.\nStep 4) Make necessary changes to the account and click on ‘Update User’ button."
+
+  utter_change_user_password:
+  - text: "Step 1) Click on the ‘Change Profile’ button provided in the Top navigation menu.\nStep 2) A window displaying the user account details of the current logged in user will pop up.\nStep 3) Provide your current password in the ‘Current Password’ inputbox.\nStep 4) Provide your New password in the ‘New Password’ inputbox.\nStep 5) Click ‘Save’ button."
+
+  utter_get_express_tool:
+  - text: "Step 1) ‘Express DGR Excel’ tool can be downloaded from the Explore DGR Web based software by clicking on ‘Request DGR Excel via Email' button provided in the ‘Express DGR’ module.\nStep 2) The Express DGR Excel file will be mailed to your linked Email Address. "
+
+  utter_update_received_tool:
+  - text: "Downloaded the mailed Excel file (from above step) containing latest DGR data:\nStep 1) Update DGR data (if required) in this file.\nStep 2) Select current (applicable) date from DGR Date calendar.\nStep 3) Click on ‘Submit Express DGR’ button.\nStep 4) A small window will popup, in this window click the ‘Submit DGR’ button to update the DGR data.\nStep 5) To submit the updated DGR data from the selected date click on ‘Submit Express DGR’ button."
+
+  utter_change_user_email:
+  - text: "Select applicable user name from the dropdown list."
+
+  utter_access_explore_location:
+  - text: "EXPLORE LOCATION module can be accessed through any modern Web browser by visiting the link: http://explore.ongc.co.in"
+
+  utter_add_explore_location:
+  - text: "Step 1) Click on the ‘New Location’ button.\nStep 2) Fill location data in the displayed Form.\nStep 3) Save it using the ‘Save button."
+
+  utter_filter_explore_location:
+  - text: "Step 1) Click the ‘Filter Data’ checkbox.\nStep 2) The Inputbox below every data column header can be used to filter the Locations by entering a Search text or selecting a Dropdown value."
+
+  utter_remove_filter_explore_location:
+  - text: "De-select the ‘Filter Data’ checkbox."
+
+  utter_export_explore_location:
+  - text: "Click on the ‘Export Data’ button, available on the Right side of the screen."
+
+  utter_search_explore_location:
+  - text: "Use the Location Search InputBox provided at the Top of the page by Entering Location Release Name. "
+
+  utter_obtain_clearance_status:
+  - text: "Step 1) Click on ‘Add Row’ button.\nStep 2) Select relevant Activity.\nStep 3) Select Status from the dropdown.\nStep 4) Add (Activity) Status date and applicable Remark.\nStep 5) Click on ‘Save’ button on Top section of the form to save the data row."
+
+  utter_obtain_LAQ_status:
+  - text: "Step 1) Click on ‘Add Row’ button.\nStep 2) Select relevant Activity.\nStep 3) Select Status from the dropdown.\nStep 4) Add (Activity) Status date and applicable Remark.\nStep 5) Click on ‘Save’ button on Top section of the form to save the data row."
+
+  utter_obtain_civil_status:
+  - text: "Step 1) Click on ‘Add Row’ button.\nStep 2) Select relevant Activity.\nStep 3) Select Status from the dropdown.\nStep 4) Add (Activity) Status date and applicable Remark.\nStep 5) Click on ‘Save’ button on Top section of the form to save the data row."
+
+  utter_obtain_misc_status:
+  - text: "Step 1) Add a New Row with activity type ‘MISC’ along with dates and applicable Remark.\nStep 2) Fill the required data, click on the ‘Save’ button."
+
+  utter_download_reports:
+  - text: "Step 1) Click on ‘Reports’ link available in Top menu navigation.\nStep 2) This page displays list of Location related reports. Click on any report to download in PDF format."
+
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
+
+  utter_ask_email:
+  - text: what is your email id
+  utter_ask_subject:
+  - text: Please provide subject for your email
+  utter_ask_message:
+  - text: Please provide message for your email
+  utter_submit:
+  - text: Okay,thanks.
+  utter_slot_values:
+  - text: |-
+      The contents of email are,
+        - email: {email}
+        - subject: {subject}
+        - message: {message}
+      Do you want me to proceed?
+  utter_day:
+  - text: Please provide which day forecast you want
+  utter_weather:
+  - text: Temperature is {temp}
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
