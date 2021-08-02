@@ -1,0 +1,295 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: hello_world
+  examples: |
+    -hello world
+    -world
+
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: add_new_well
+  examples: |
+    -how to add new well
+    -how to create new well
+    -steps to create new well
+    -steps for new well creation
+    -create new well
+    
+- intent: update_existing_well
+  examples: |
+    -update existing well
+    -how to update existing well
+    -steps to update existing well
+    -steps for existing well updation
+    -update well
+    -modify well
+
+- intent: add_new_rig
+  examples: |
+    -how to add new rig
+    -how to create new rig
+    -steps to create new rig
+    -steps for new rig creation
+    -create new rig
+
+- intent: update_existing_rig
+  examples: |
+    -update existing rig
+    -how to update existing rig
+    -steps to update existing rig
+    -steps for existing rig updation
+    -update rig
+    -modify rig
+    -modify existing rig
+
+- intent: perform_rig_movement
+  examples: |
+    -rig movement
+    -how to perform rig movement
+    -steps to move rig
+    -perform rig movement
+    -move rig
+
+
+- intent: access_explore_DGR
+  examples: |
+    -access explore DGR
+    -access DGR
+    -explore DGR
+
+
+- intent: save_DGR
+  examples: |
+    -how to save dgr
+    -save dgr
+
+- intent: submit_DGR
+  examples: |
+    -submit dgr
+    -how to submit dgr
+
+- intent: add_new_user_account
+  examples: |
+    -add new user account
+    -How to Add New User Account?
+    -new user account
+    -new user
+
+- intent: update_user_account
+  examples: |
+    -update existing user account
+    -existing User Account?
+    -How to Update Existing User Account?
+    -update user account
+
+- intent: change_user_password
+  examples: |
+    -change password
+    -user password
+    -How to Change User Password?
+
+- intent: get_express_tool
+  examples: |
+    -How to Get Express DGR Excel Tool?
+    -get express tool
+    -get dgr tool
+    -get dgr excel tool
+
+- intent: update_received_tool
+  examples: |
+    -How to update Received DGR using ‘Express DGR Excel’ Tool ?
+    -updade received tool
+    -update dgr express tool
+
+- intent: change_user_email
+  examples: |
+    -How to change user email address in ‘Express DGR Excel’ Tool?
+    -change user email address
+
+
+- intent: access_explore_location
+  examples: |
+    -How to access EXPLORE LOCATION?
+    -access explore location
+
+- intent: add_explore_location
+  examples: |
+    -How to add New Location?
+    -add new explore location
+
+
+- intent: filter_explore_location
+  examples: |
+    -How to Filter Locations?
+    -filter explore location
+
+
+- intent: remove_filter_explore_location
+  examples: |
+    -How to remove Location filter?
+    -remove explore location filter
+
+- intent: export_explore_location
+  examples: |
+    -How to Export Locations? 
+    -export explore location
+
+- intent: search_explore_location
+  examples: |
+    -How to Search Locations?
+    -search explore location
+
+
+- intent: obtain_clearance_status
+  examples: |
+    -How to obtain Statutory Clearance Status?
+    -Clearance Status
+
+- intent: obtain_LAQ_status
+  examples: |
+    -How to obtain LAQ Status?
+    -LAQ Status
+
+- intent: obtain_civil_status
+  examples: |
+    -How to obtain civil Status?
+    -Clivil Status
+
+- intent: obtain_misc_status
+  examples: |
+    -How to obtain Miscellaneous Status?
+    -Miscellaneous Status
+
+- intent: download_reports
+  examples: |
+    -How to Download Reports?
+    -Download reports
+
+- intent: send_email
+  examples: |
+    -I want to send email
+    -email
+    -send email
+
+- intent: email
+  examples: |
+    - [ketan.mittal12@gmail.com](email)
+
+- intent: subject
+  examples: |
+    - [Regarding reports](subject)
+
+- intent: message
+  examples: |
+    - [download reports](message)
+
+- intent: weather
+  examples: |
+    - What is the weather like?
+    - weather
+
+- intent: weather_day
+  examples: |
+    - Today
+    - Day 1
+    - Day 2
+    - Day 3
+    - day 1
+    - day 2
+    - day 3
+- regex: email
+  examples: |
+    - ^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$
+
+
+

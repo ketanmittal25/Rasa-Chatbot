@@ -1,0 +1,143 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: hello world path
+  steps:
+    - intent: hello_world
+    - action: utter_hello_world
+    
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: dgr path
+  steps:
+  - intent: access_explore_DGR
+  - action: utter_access_explore_DGR
+  - intent: save_DGR
+  - action: utter_save_DGR
+  - intent: add_new_well
+  - action: utter_submit_DGR
+  - intent: add_new_user_account
+  - action: utter_add_new_user_account
+  - intent: update_user_account
+  - action: utter_update_user_account
+  - intent: change_user_password
+  - action: utter_change_user_password
+
+- story: well rig path
+  steps:
+  - intent: add_new_well
+  - action: utter_add_new_well
+  - intent: update_existing_well
+  - action: utter_update_existing_well
+  - intent: add_new_rig
+  - action: utter_add_new_rig
+  - intent: update_existing_rig
+  - action: utter_update_existing_rig
+  - intent: perform_rig_movement
+  - action: utter_perform_rig_movement
+
+- story: dgr offline path
+  steps:
+  - intent: get_express_tool
+  - action: utter_get_express_tool
+  - intent: update_received_tool
+  - action: utter_update_received_tool
+  - intent: change_user_email
+  - action: utter_change_user_email
+
+
+- story: location path
+  steps:
+  - intent: access_explore_location
+  - action: utter_access_explore_location
+  - intent: add_explore_location
+  - action: utter_add_explore_location
+  - intent: filter_explore_location
+  - action: utter_filter_explore_location
+  - intent: remove_filter_explore_location
+  - action: utter_remove_filter_explore_location
+  - intent: export_explore_location
+  - action: utter_export_explore_location
+  - intent: change_user_password
+  - action: utter_search_explore_location
+
+- story: location status path
+  steps:
+  - intent: obtain_clearance_status
+  - action: utter_obtain_clearance_status
+  - intent: obtain_LAQ_status
+  - action: utter_obtain_LAQ_status
+  - intent: obtain_civil_status
+  - action: utter_obtain_civil_status
+  - intent: obtain_misc_status
+  - action: utter_obtain_misc_status
+  - intent: download_reports
+  - action: utter_download_reports
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: send_email
+  - action: email_form
+  - active_loop: email_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: ketan.mittal12@gmail.com
+  - slot_was_set:
+    - email: ketan.mittal12@gmail.com
+  - slot_was_set:
+    - requested_slot: subject
+  - slot_was_set:
+    - subject: Advanced courses
+  - slot_was_set:
+    - subject: Advanced courses
+  - slot_was_set:
+    - requested_slot: message
+  - slot_was_set:
+    - message: Check advance courses
+  - slot_was_set:
+    - message: Check advance courses
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slot_values
+  - intent: affirm
+  - action: action_submit 
+
+- story: Weather_Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: weather
+  - action: utter_day
+  - intent: weather_day
+  - action: action_weather_api
