@@ -2,7 +2,7 @@
 This project showcases the various files required for building a rasa chatbot with functionality for Entity Extraction, API Weather Calls, Email sending etc.
 
 The various files are detailed as follows:
-# Test.db
+## Test.db
 Contains the database in sqlite for the storage of all the real time interactions with the bot.
 
 # Config.yml
